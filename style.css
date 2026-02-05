@@ -148,6 +148,15 @@ footer {
   margin-top: 50px;
   font-size: 0.9em;
   color: #a0a0ff;
+  /* Logo Endless ở trung tâm */
+.logo-center {
+  text-align: center;
+  margin: 20px 0 30px;
+}
+
+.endless-logo-center {
+  height: 60px;
+  object-fit: contain;
 }
 
 footer a {
