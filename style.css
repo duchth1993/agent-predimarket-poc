@@ -163,3 +163,10 @@ footer a {
   color: #a0a0ff;
   text-decoration: underline;
 }
+.loading {
+  display: none;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.2em;
+  color: #a0a0ff;
+}
