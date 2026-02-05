@@ -1,25 +1,29 @@
-function simulateLeak() {
-  const message = document.getElementById("message").value.trim() || "Your secret message";
-  const result = document.getElementById("result");
+function placeBet(choice) {
+  const stake = parseInt(document.getElementById("stake-amount").value) || 100;
+  const result = document.getElementById("bet-result");
   result.classList.remove("hidden");
-  document.getElementById("result-title").textContent = "Web2 Leak Detected!";
-  document.getElementById("result-title").style.color = "#ff4444";
-  document.getElementById("result-text").innerHTML = `Your message "${message}" is now visible to the server and hackers.<br><br>Centralized risk: 0% Privacy`;
-  document.getElementById("privacy-score").textContent = "0%";
-  document.getElementById("privacy-score").style.color = "#ff4444";
-  document.getElementById("call-to-action").textContent = "Switch to Luffa for real protection!";
-  result.style.background = "rgba(255, 68, 68, 0.15)";
+
+  // Mock resolution after 2 seconds
+  setTimeout(() => {
+    const outcome = Math.random() > 0.5 ? "Yes" : "No";
+    if (outcome === choice) {
+      document.getElementById("bet-title").textContent = "You Won!";
+      document.getElementById("bet-title").style.color = "#00cc88";
+      document.getElementById("bet-text").innerHTML = `The event resolved as ${outcome}. You earned ${stake * 2} mock EDS!`;
+      document.getElementById("outcome-score").textContent = "+200%";
+      document.getElementById("outcome-score").style.color = "#00cc88";
+    } else {
+      document.getElementById("bet-title").textContent = "You Lost";
+      document.getElementById("bet-title").style.color = "#ff4444";
+      document.getElementById("bet-text").innerHTML = `The event resolved as ${outcome}. Stake lost.`;
+      document.getElementById("outcome-score").textContent = "-100%";
+      document.getElementById("outcome-score").style.color = "#ff4444";
+    }
+  }, 2000);
 }
 
-function simulateSafe() {
-  const message = document.getElementById("message").value.trim() || "Your secret message";
-  const result = document.getElementById("result");
+function runAgent() {
+  const result = document.getElementById("agent-result");
   result.classList.remove("hidden");
-  document.getElementById("result-title").textContent = "Luffa Privacy Protected!";
-  document.getElementById("result-title").style.color = "#00cc88";
-  document.getElementById("result-text").innerHTML = `Your message "${message}" is fully encrypted end-to-end.<br><br>No one (not even Luffa) can read it. Relay nodes keep it decentralized.`;
-  document.getElementById("privacy-score").textContent = "100%";
-  document.getElementById("privacy-score").style.color = "#00cc88";
-  document.getElementById("call-to-action").textContent = "Your privacy is safe with Endless!";
-  result.style.background = "rgba(0, 204, 136, 0.15)";
+  document.getElementById("prediction-text").innerHTML = "Nessy Agent is analyzing...<br><br>Prediction: 68% chance Yes (based on current Luffa growth & Odyssey trends)";
 }
