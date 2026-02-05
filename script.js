@@ -22,7 +22,12 @@ function placeBet(choice) {
     }
   }, 2000);
 }
-
+const reasonsYes = [
+  "Strong growth in Luffa DAU and Odyssey points.",
+  "Nessy utilities expanding fast.",
+  "Privacy push driving adoption."
+];
+const reason = reasonsYes[Math.floor(Math.random() * reasonsYes.length)];
 function runAgent() {
   const event = document.getElementById("event-select").value;
   const result = document.getElementById("agent-result");
