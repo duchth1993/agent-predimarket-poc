@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luffa Privacy Leak Simulator</title>
+  <title>Agent Predimarket PoC – Endless</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -11,36 +11,46 @@
   <div class="container">
     <header>
       <div class="logos">
-        <!-- Thay bằng link ảnh logo thật của bạn nếu có -->
         <img src="https://via.placeholder.com/120x40/6a5acd/ffffff?text=Luffa" alt="Luffa Logo" class="logo">
         <img src="https://via.placeholder.com/120x40/9370db/ffffff?text=Endless" alt="Endless Logo" class="logo">
       </div>
-      <h1>Luffa Privacy Leak Simulator</h1>
-      <p>See how your messages get exposed in Web2… then stay safe on Luffa 🛡️🐳</p>
+      <h1>Agent Predimarket PoC</h1>
+      <p>Privacy-preserving prediction market demo with AI agents on Endless</p>
     </header>
 
     <main>
-      <div class="input-area">
-        <label for="message">Your Secret Message:</label>
-        <textarea id="message" placeholder="Type something private here..."></textarea>
+      <div class="event-card">
+        <h2>Event: Will Luffa reach 2M DAU in Q1 2026?</h2>
+        <div class="options">
+          <button class="yes-btn" onclick="placeBet('Yes')">Bet Yes</button>
+          <button class="no-btn" onclick="placeBet('No')">Bet No</button>
+        </div>
+        <div class="stake">
+          <label for="stake-amount">Stake mock EDS:</label>
+          <input type="number" id="stake-amount" min="1" value="100" />
+        </div>
       </div>
 
-      <div class="buttons">
-        <button class="leak-btn" onclick="simulateLeak()">Simulate Web2 Leak</button>
-        <button class="safe-btn" onclick="simulateSafe()">Simulate Luffa Privacy</button>
+      <div class="agent-section">
+        <button class="agent-btn" onclick="runAgent()">Let Nessy Agent Predict</button>
+        <div id="agent-result" class="result hidden">
+          <h3>Nessy Agent Prediction</h3>
+          <p id="prediction-text"></p>
+        </div>
       </div>
 
-      <div id="result" class="result hidden">
-        <h2 id="result-title"></h2>
-        <p id="result-text"></p>
-        <div id="privacy-score" class="score"></div>
-        <p id="call-to-action"></p>
+      <div id="bet-result" class="result hidden">
+        <h2 id="bet-title"></h2>
+        <p id="bet-text"></p>
+        <div id="outcome-score" class="score"></div>
       </div>
+
+      <p class="privacy-note">All bets protected by DID + E2EE + decentralized relays – no data leak!</p>
     </main>
 
     <footer>
-      Built for Endless Bi-Weekly Developer Contribution Program<br>
-      <a href="https://github.com/duchth1993/luffa-privacy-leak-simulator" target="_blank">GitHub Repo</a> • #EndlessDev
+      PoC for Endless Bi-Weekly Developer Contribution Program<br>
+      <a href="https://github.com/duchth1993/agent-predimarket-poc" target="_blank">GitHub Repo</a> • #EndlessDev
     </footer>
   </div>
 
