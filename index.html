@@ -20,7 +20,13 @@
 
     <main>
       <div class="event-card">
-        <h2>Event: Will Luffa reach 2M DAU in Q1 2026?</h2>
+        <h2>Select Event to Bet:</h2>
+        <select id="event-select">
+          <option value="Will Luffa reach 2M DAU in Q1 2026?">Will Luffa reach 2M DAU in Q1 2026?</option>
+          <option value="Will Nessy IP expand to games in 2026?">Will Nessy IP expand to games in 2026?</option>
+          <option value="Will Endless hit 10M users by end 2026?">Will Endless hit 10M users by end 2026?</option>
+        </select>
+
         <div class="options">
           <button class="yes-btn" onclick="placeBet('Yes')">Bet Yes</button>
           <button class="no-btn" onclick="placeBet('No')">Bet No</button>
@@ -32,10 +38,11 @@
       </div>
 
       <div class="agent-section">
-        <button class="agent-btn" onclick="runAgent()">Let Nessy Agent Predict</button>
+        <button class="agent-btn" onclick="runAgent()">Ask Nessy AI for Advice</button>
         <div id="agent-result" class="result hidden">
-          <h3>Nessy Agent Prediction</h3>
+          <h3>Nessy AI Analysis</h3>
           <p id="prediction-text"></p>
+          <p id="recommendation"></p>
         </div>
       </div>
 
@@ -44,8 +51,6 @@
         <p id="bet-text"></p>
         <div id="outcome-score" class="score"></div>
       </div>
-
-      <p class="privacy-note">All bets protected by DID + E2EE + decentralized relays – no data leak!</p>
     </main>
 
     <footer>
